@@ -84,7 +84,7 @@
                 </div>
             </c:if>
             <form method="post" action="addFile" enctype="multipart/form-data">
-                <input type="file" name="file">
+                <input type="file" name="file" accept="application/pdf">
                 <input type="submit" value="Add an attachment" class="btn btn-primary">
             </form>
             </form>

@@ -59,13 +59,13 @@ public class Step3Controller {
         if (file.isEmpty()) {
             return "redirect:/step3";
         }
-        File temp = new File(System.getProperty("user.home") + "/temp/" + file.getOriginalFilename());
+        File temp = new File(System.getProperty("user.home") + "/" + file.getOriginalFilename());
 
         files.add(temp);
 
         try {
             byte[] bytes = file.getBytes();
-            Path path = Paths.get(System.getProperty("user.home") + "/temp" + "/" + file.getOriginalFilename());
+            Path path = Paths.get(System.getProperty("user.home") + "/" + file.getOriginalFilename());
             Files.write(path, bytes);
         } catch (IOException e) {
             e.printStackTrace();

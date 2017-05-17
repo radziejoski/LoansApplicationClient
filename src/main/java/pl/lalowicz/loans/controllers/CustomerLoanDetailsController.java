@@ -68,7 +68,7 @@ public class CustomerLoanDetailsController {
 
     @RequestMapping(value = "/addFile", method = RequestMethod.POST)
     public String uploadFile(@ModelAttribute("file") MultipartFile file) {
-        File temp = new File(System.getProperty("user.home") + "/temp/" + file.getOriginalFilename());
+        File temp = new File(System.getProperty("user.home") + "/" + file.getOriginalFilename());
         if (file.isEmpty()) {
             return "redirect:/customerLoanDetails";
         }
@@ -78,7 +78,7 @@ public class CustomerLoanDetailsController {
 
         try {
             byte[] bytes = file.getBytes();
-            Path path = Paths.get(System.getProperty("user.home") + "/temp" + "/" + file.getOriginalFilename());
+            Path path = Paths.get(System.getProperty("user.home") + "/" + file.getOriginalFilename());
             Files.write(path, bytes);
         } catch (IOException e) {
             e.printStackTrace();
